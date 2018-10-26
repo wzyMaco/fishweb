@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道</title>
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/baidu.css"/>
+
+    <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            window.location = "./baidu.html"; //可以换成http地址
+        }else {
+
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="javascript:;">新闻</a>
+            </li>
+            <li>
+                <a href="javascript:;">hao123</a>
+            </li>
+            <li>
+                <a href="javascript:;">地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">视频</a>
+            </li>
+            <li>
+                <a href="javascript:;">贴吧</a>
+            </li>
+            <li>
+                <a href="javascript:;">学术</a>
+            </li>
+            <li>
+                <a href="javascript:;" class="bd-tl">登录</a>
+            </li>
+            <li>
+                <a href="javascript:;" class="bd-tl">设置</a>
+            </li>
+            <li>
+                <a href="javascript:;" class="bd-more">更多产品</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <section class="bd-middle">
+        <div class="logo">
+            <img src="https://www.baidu.com/img/bd_logo1.png" alt="logo">
+        </div>
+
+        <div class="bd-search-wrap">
+            <div class="bd-search">
+                <span><input type="text" id="value"></span>
+                <i class="kmr"></i>
+            </div>
+            <a href="javascript:;" id="search">百度一下</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="bd-qr">
+            <img src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png" alt="qr">
+            <p>百度</p>
+        </div>
+
+        <ul class="bd-link">
+            <li>
+                <a href="javascript:;">把百度设为主页</a>
+            </li>
+            <li>
+                <a href="javascript:;">关于百度</a>
+            </li>
+            <li>
+                <a href="javascript:;">About  Baidu</a>
+            </li>
+            <li>
+                <a href="javascript:;">百度推广</a>
+            </li>
+        </ul>
+
+        <div class="bd-msg">
+            <span>©2018 Baidu </span>
+            <a href="javascript:;">使用百度前必读</a>
+            <a href="javascript:;">意见反馈</a>
+            <span> 京ICP证030173号 </span>
+            <img src="" alt="">
+            <a href="javascript:;">京公网安备11000002000001号</a>
+            <img src="" alt="">
+        </div>
+    </footer>
+
+
+    <script>
+        const serch = document.getElementById('search');
+        const value = document.getElementById('value');
+        serch.addEventListener('click', function (ev) {
+            sessionStorage.setItem('cz15FishSearch', value.value);
+            window.location.href = './errorPC.html'
+        })
+    </script>
+</body>
+</html>

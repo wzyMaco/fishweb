@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道！</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/baiduweb.css"/>
+
+    <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+        }else {
+            window.location = "./baiduPC.html"; //可以换成http地址
+        }
+    </script>
+</head>
+<body>
+
+<div style="padding: 0 10px; box-sizing: border-box;">
+
+    <header>
+        <div class="left-a"></div>
+        <div class="right-a"></div>
+    </header>
+
+    <section class="logo">
+        <img src="https://www.baidu.com/img/bd_logo1.png" alt="logo">
+    </section>
+
+    <div class="bd-search-wrap">
+        <div class="bd-search">
+            <input type="text" id="value">
+            <i class="kmr"></i>
+        </div>
+        <a href="javascript:;" id="serch">百度一下</a>
+    </div>
+
+    <img src="../images/img.png" style="width: 100%" alt="bd">
+
+    <script>
+        const serch = document.getElementById('serch');
+        const value = document.getElementById('value');
+        serch.addEventListener('click', function (ev) {
+            sessionStorage.setItem('cz15FishSearch', value.value);
+            window.location.href = './error.html'
+        })
+    </script>
+</div>
+</body>
+</html>

